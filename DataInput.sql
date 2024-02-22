@@ -1,11 +1,3 @@
-ALTER TABLE LocationWeather
-ADD MaxTemp INT NOT NULL,
-    MinTemp INT NOT NULL,
-    AvgTemp INT NOT NULL,
-    Precipitation INT NOT NULL;
-
-ALTER TABLE Location
-ADD Address VARCHAR(255) NOT NULL;
 
 INSERT INTO [User] (UID, Username, Password, Email) VALUES
 (3, 'alice_smith', 'pass123', 'alice.smith@example.com'),
@@ -20,8 +12,8 @@ INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation)
 (4, 104, 80, 60, 70, 0);
 
 INSERT INTO WeatherHealth (UID, LID, WID, Rating, Comment) VALUES
-(3, 3, 103, 5, 'Beautiful weather in Chicago today'),
-(4, 4, 104, 4, 'Sunny day in Houston, perfect for outdoor activities');
+(3, 3, 103, 7, 'Beautiful weather in Chicago today, asthma was not bad'),
+(4, 4, 104, 3, 'Sunny day, pretty hot midday, breathing got difficult');
 
 <------------------>
 
@@ -45,4 +37,4 @@ INSERT INTO WeatherHealth (UID, LID, WID, Rating, Comment) VALUES
 (6, 6, 106, 6, 'was nice out'),
 (7, 7, 107, 8, 'make sure to pack something warm!');
 
-SELECT * from WeatherHealth
+
