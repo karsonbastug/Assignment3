@@ -7,9 +7,9 @@ INSERT INTO Location (LID, City, State, ZipCode, Address) VALUES
 (1, 'Chicago', 'IL', '60601', '123 Main St'),
 (2, 'Houston', 'TX', '77002', '456 Elm St');
 
-INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation) VALUES
-(1, 100, 75, 55, 65, 0),
-(2, 101, 80, 60, 70, 0);
+INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation, Date) VALUES
+(1, 100, 75, 55, 65, 0, '2024-1-10'),
+(2, 101, 80, 60, 70, 0, '2024-2-04');
 
 INSERT INTO HealthReview (UID, LID, WID, Rating, Comment, Date) VALUES
 (1, 1, 100, 7, 'Beautiful weather in Chicago today, asthma was not bad', '2024-1-10'),
@@ -27,10 +27,10 @@ INSERT INTO Location (LID, City, State, ZipCode, Address) VALUES
 (4, 'Seattle', 'WA', '98101', '101 Pine St'),
 (5, 'Denver', 'CO', '80202', '555 Broadway St');
 
-INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation) VALUES
-(3, 102, 85, 65, 75, 10),
-(4, 103, 70, 50, 60, 5),
-(5, 104, 60, 40, 50, 8);
+INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation, Date) VALUES
+(3, 102, 85, 65, 75, 10, '2023-08-19'),
+(4, 103, 70, 50, 60, 5, '2023-09-20'),
+(5, 104, 60, 40, 50, 8, '2023-10-19');
 
 INSERT INTO HealthReview (UID, LID, WID, Rating, Comment, Date) VALUES
 (3, 3, 102, 3, 'this place is hell', '2023-08-19'),
