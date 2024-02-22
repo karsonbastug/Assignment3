@@ -11,9 +11,9 @@ INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation)
 (3, 103, 75, 55, 65, 0),
 (4, 104, 80, 60, 70, 0);
 
-INSERT INTO WeatherHealth (UID, LID, WID, Rating, Comment) VALUES
-(3, 3, 103, 7, 'Beautiful weather in Chicago today, asthma was not bad'),
-(4, 4, 104, 3, 'Sunny day, pretty hot midday, breathing got difficult');
+INSERT INTO HealthReview (UID, LID, WID, Rating, Comment, Date) VALUES
+(3, 3, 103, 7, 'Beautiful weather in Chicago today, asthma was not bad', '2024-1-10'),
+(4, 4, 104, 3, 'Sunny day, pretty hot midday, breathing got difficult', '2024-2-04');
 
 <------------------>
 
@@ -32,9 +32,9 @@ INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation)
 (6, 106, 70, 50, 60, 5),
 (7, 107, 60, 40, 50, 8);
 
-INSERT INTO WeatherHealth (UID, LID, WID, Rating, Comment) VALUES
-(5, 5, 105, 3, 'this place is hell'),
-(6, 6, 106, 6, 'was nice out'),
-(7, 7, 107, 8, 'make sure to pack something warm!');
+INSERT INTO HealthReview (UID, LID, WID, Rating, Comment, Date) VALUES
+(5, 5, 105, 3, 'this place is hell', '2023-08-19'),
+(6, 6, 106, 6, 'was nice out', '2023-09-20'),
+(7, 7, 107, 8, 'make sure to pack something warm!', '2023-10-19');
 
 
