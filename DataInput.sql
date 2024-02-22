@@ -35,4 +35,4 @@ INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation,
 INSERT INTO HealthReview ([UID], LID, WID, Rating, Comment, [Date]) VALUES
 (3, 3, 102, 3, 'this place is hell', '2023-08-19'),
 (4, 4, 103, 6, 'was nice out', '2023-09-20'),
-(5, 5, 104, 8, 'make sure to pack something warm!', '2023-10-19');
+(5, 5, 104, 6, 'make sure to pack something warm!', '2023-10-19');
