@@ -6,10 +6,11 @@ CREATE TABLE [User] (
 );
 
 CREATE TABLE Location (
-    LID INT PRIMARY KEY,
-    City VARCHAR(100) NOT NULL,
-    [State] VARCHAR(20) NOT NULL,
-    ZipCode VARCHAR(20) NOT NULL
+    LID INT PRIMARY KEY NOT NULL,
+    City VARCHAR(100),
+    [State] VARCHAR(20),
+	[Address] VARCHAR(2),
+    ZipCode VARCHAR(20),
 );
 
 CREATE TABLE LocationWeather (
