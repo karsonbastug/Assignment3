@@ -19,12 +19,13 @@ CREATE TABLE LocationWeather (
     FOREIGN KEY (LID) REFERENCES Location(LID)
 );
 
-CREATE TABLE WeatherHealth (
+CREATE TABLE HealthReview (
     UID INT NOT NULL,
     LID INT NOT NULL,
     WID INT NOT NULL,
     Rating INT,
     Comment TEXT,
+    Date DATE,
     PRIMARY KEY (UID, LID, WID),
     FOREIGN KEY (UID) REFERENCES [User](UID),
     FOREIGN KEY (LID, WID) REFERENCES LocationWeather(LID, WID)
