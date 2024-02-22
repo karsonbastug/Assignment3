@@ -9,7 +9,7 @@ CREATE TABLE Location (
     LID INT PRIMARY KEY NOT NULL,
     City VARCHAR(100),
     [State] VARCHAR(20),
-	[Address] VARCHAR(2),
+    [Address] VARCHAR(20),
     ZipCode VARCHAR(20),
 );
 
