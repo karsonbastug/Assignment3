@@ -15,6 +15,11 @@ CREATE TABLE Location (
 CREATE TABLE LocationWeather (
     LID INT NOT NULL,
     WID INT NOT NULL,
+    MaxTemp INT,
+    MinTemp INT,
+    AvgTemp INT,
+    Precipitation INT,
+    Date DATE,
     PRIMARY KEY (LID, WID),
     FOREIGN KEY (LID) REFERENCES Location(LID)
 );
