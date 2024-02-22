@@ -1,5 +1,5 @@
 
-INSERT INTO [User] [UID], Username, [Password], Email) VALUES
+INSERT INTO [User] ([UID], Username, [Password], Email) VALUES
 (1, 'alice_smith', 'pass123', 'alice.smith@example.com'),
 (2, 'bob_jones', 'bobpass', 'bob.jones@example.com');
 
@@ -36,4 +36,3 @@ INSERT INTO HealthReview ([UID], LID, WID, Rating, Comment, [Date]) VALUES
 (3, 3, 102, 3, 'this place is hell', '2023-08-19'),
 (4, 4, 103, 6, 'was nice out', '2023-09-20'),
 (5, 5, 104, 8, 'make sure to pack something warm!', '2023-10-19');
-
