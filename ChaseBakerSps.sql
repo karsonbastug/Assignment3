@@ -1,7 +1,8 @@
 -- This is the Alpha Male's Territory, do you have permission to be here?
 
---This one took forever to figure out
+
 --You input table, attribute name, and attribute type, then it gets added to that table. 
+--This one is primarily used to add features to the LocationWeather table to add more valuable criteria of information to return.
 --This is objectively worse than the ALTER TABLE option, this is just a round about waty to do it.
 --I recommend dropping this one and finding a new one maybe, for this reason I made a third / modified sp
 CREATE PROCEDURE addAttrToTable
@@ -20,9 +21,11 @@ CREATE PROCEDURE addAttrToTable
 		END;
 		GO
 
-			
---I NEED A RAISE
---You input city and season, outputs avg rating during that season in that city
+--To execute the above procedure:
+EXEC addAttrToTable @Table = "LocationWeather", @NewAttr = "Windiness", @NewAttrDataType = "varchar(30)";
+
+
+--You input city and season, outputs avg rating during that season in that city. 
 CREATE PROC avgRatePerSeasonInCity
 @City varchar(100),
 @Season varchar(100)
@@ -52,6 +55,10 @@ HAVING (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
 END;
 GO
 
+--Example of an Execution of the previous procedure:
+EXEC avgRatePerSeason @City = "Chicago", @Season = "Winter";
+
+
 
 --Modified Version of previous that just gives average of Rating in every season for every city	
 CREATE PROC avgRatingPerSeason
@@ -76,6 +83,10 @@ GROUP BY (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
 		END) 
 		END;
 		GO
+
+--How to execute the above procedure:
+EXEC PROC avgRatingPerSeason
+
 
 
 		
