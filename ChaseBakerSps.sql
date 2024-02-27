@@ -3,8 +3,9 @@
 
 --You input table, attribute name, and attribute type, then it gets added to that table. 
 --This one is primarily used to add features to the LocationWeather table to add more valuable criteria of information to return.
---This is objectively worse than the ALTER TABLE option, this is just a round about waty to do it.
---I recommend dropping this one and finding a new one maybe, for this reason I made a third / modified sp
+--The plan is to implement a datascraping feature also within this procedure. 
+--Ideally, as soon as the category is created, it scrapes data from that category for the new attribute immediately.
+--We have not learned/written that code yet so this is only the first half. (Also assuming the created attribute is real and valid).
 CREATE PROCEDURE addAttrToTable
 	@Table varchar(30),
 	@NewAttr varchar(30),
