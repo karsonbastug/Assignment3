@@ -13,9 +13,10 @@ END;
 
   --EXEC GetRatingsForHighTemp @MaxTemp = 85 @MinTemp=65;
 
+
+
 CREATE PROCEDURE GetRatingForLocations
     @LID INT
-
 AS
 BEGIN
     SELECT H.Rating, H.Comment, H.[Date]
