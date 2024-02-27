@@ -12,4 +12,4 @@ BEGIN
 END;
 
   
-  --EXEC GetRatingsForHighTemp @MaxTemp = 80 @MinTemp40
+  --EXEC GetRatingsForHighTemp @MaxTemp = 80 @MinTemp=40
