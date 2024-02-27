@@ -12,3 +12,16 @@ BEGIN
 END;
 
   --EXEC GetRatingsForHighTemp @MaxTemp = 85 @MinTemp=65;
+
+CREATE PROCEDURE GetRatingForLocations
+    @LID INT
+
+AS
+BEGIN
+    SELECT H.Rating, H.Comment, H.[Date]
+    FROM HealthReview H
+    INNER JOIN LocationWeather LW ON H.LID = LW.LID AND H.WID = LW.WID
+    WHERE LW.LID = 1;
+END;
+
+    --EXEC GetRatingForLocations @LID 1
