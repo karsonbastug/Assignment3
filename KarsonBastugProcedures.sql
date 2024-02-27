@@ -5,8 +5,8 @@ AS
 BEGIN
     SELECT HR.Rating, HR.[Date], L.[Address], L.[State]
     FROM HealthReview HR
-    JOIN LocationWeather LW ON HR.LID = LW.LID AND HR.WID = LW.WID
-    JOIN Location L on LW.LID=L.LID
+    INNER JOIN LocationWeather LW ON HR.LID = LW.LID AND HR.WID = LW.WID
+    INNER JOIN Location L on LW.LID=L.LID
     WHERE LW.MaxTemp > @MaxTemp;
 END;
 
@@ -18,8 +18,8 @@ AS
 BEGIN
     SELECT L.City, LW.[Date], HR.Rating
     FROM Location L
-    JOIN LocationWeather LW ON L.LID = LW.LID
-    JOIN HealthReview HR ON LW.LID = HR.LID AND LW.WID = HR.WID
+    INNER JOIN LocationWeather LW ON L.LID = LW.LID
+    INNER JOIN HealthReview HR ON LW.LID = HR.LID AND LW.WID = HR.WID
     WHERE HR.Rating > @Rating;
 END;
 
