@@ -11,5 +11,4 @@ BEGIN
     GROUP BY HR.Rating, HR.[Date], L.[Address], L.[State];
 END;
 
-  
-  --EXEC GetRatingsForHighTemp @MaxTemp = 80 @MinTemp=40
+  --EXEC GetRatingsForHighTemp @MaxTemp = 85 @MinTemp=65;
