@@ -25,4 +25,4 @@ BEGIN
     WHERE LW.LID = 1;
 END;
 
-    --EXEC GetRatingForLocations @LID 1
+    --EXEC GetRatingForLocations @LID = 1
