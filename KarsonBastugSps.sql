@@ -12,15 +12,18 @@ END;
 
 --EXEC GetRatingsForHighTemp @MaxTemp = 80;
 
-CREATE PROCEDURE GetCitiesByRating
+
+CREATE PROCEDURE GetCitiesByRatingAndDateRated
     @Rating INT
 AS
 BEGIN
-    SELECT L.City, LW.[Date], HR.Rating
+    SELECT L.City, HR.[Date], HR.Rating
     FROM Location L
     INNER JOIN LocationWeather LW ON L.LID = LW.LID
     INNER JOIN HealthReview HR ON LW.LID = HR.LID AND LW.WID = HR.WID
-    WHERE HR.Rating > @Rating;
+    WHERE HR.Rating > @Rating
 END;
 
---EXEC GetCitiesByRating @Rating = 2;
+--EXEC GetCitiesByRatingAndDateRated @Rating = 3
+
+
