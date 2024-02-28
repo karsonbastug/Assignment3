@@ -1,5 +1,8 @@
-CREATE Database Asthma
-USE Asthma
+CREATE DATABASE Asthma;
+GO
+
+USE Asthma;
+GO
 
 CREATE TABLE [User] (
     [UID] INT PRIMARY KEY NOT NULL,
@@ -13,7 +16,7 @@ CREATE TABLE Location (
     City VARCHAR(100),
     [State] VARCHAR(20),
     [Address] VARCHAR(20),
-    ZipCode VARCHAR(20),
+    ZipCode VARCHAR(20)
 );
 
 CREATE TABLE LocationWeather (
