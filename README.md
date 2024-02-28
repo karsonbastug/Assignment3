@@ -6,7 +6,7 @@ Three multibillion-dollar ideas came together to form the perfect website: Rate 
 
 ## Karson ##
 Select ratings for a certain temp or precipitation level 
-- Description: Retrieves the ratings  for certain condtions, such as reviews when the temp high for any day was 80 
+- Description: Retrieves the ratings  for certain temperatures, such as reviews when the temp high for any day was higher than 80
 
 Get cities with ratings higher than a certain amount and the date rated
 - Desciption: Retrieves cities and the respective weather conditions when ratings were > x 
