@@ -8,7 +8,7 @@ Three multibillion-dollar ideas came together to form the perfect website: Rate 
 Select ratings for a certain temp or precipitation level 
 - Description: Retrieves the ratings  for certain condtions, such as reviews when the temp high for any day was 80 
 
-Get cities with ratings higher than a certain amount (or lower) 
+Get cities with ratings higher than a certain amount and the date rated
 - Desciption: Retrieves cities and the respective weather conditions when ratings were > x 
 
  
