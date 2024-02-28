@@ -1,3 +1,6 @@
+CREATE Database Asthma
+USE Asthma
+
 CREATE TABLE [User] (
     [UID] INT PRIMARY KEY NOT NULL,
     Username VARCHAR(50) NOT NULL,
