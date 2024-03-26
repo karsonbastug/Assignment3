@@ -1,6 +1,22 @@
 -- This is the Alpha Male's Territory, do you have permission to be here?
 
 
+--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!THIS IS AN UPDATED SP TO REPLACE THE "addAttrToTable" PROCEDURE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+--Calls Weather data for the current date given a city
+CREATE PROCEDURE getLocDetails
+	@City varchar(30)
+
+	AS 
+	BEGIN 
+	SELECT l.City, lw.MaxTemp, lw.MinTemp, lw.AvgTemp,lw.Precipitation 
+	FROM LocationWeather lw
+	LEFT JOIN Location l ON lw.LID=l.LID
+	WHERE l.City = @City AND CAST(GetDate() AS Date) = lw.Date;
+	
+	END;
+
+	GO
+
 --You input table, attribute name, and attribute type, then it gets added to that table. 
 --This one is primarily used to add features to the LocationWeather table to add more valuable criteria of information to return.
 --The plan is to implement a datascraping feature also within this procedure. 
