@@ -6,7 +6,7 @@
 
 --!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!THIS IS AN UPDATED SP TO REPLACE THE "addAttrToTable" PROCEDURE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 --Calls Weather data for the current date given a city
-CREATE PROCEDURE getLocDetails
+CREATE PROCEDURE spgetLocDetails
 	@City varchar(30)
 
 	AS 
