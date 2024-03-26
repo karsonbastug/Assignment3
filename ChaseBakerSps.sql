@@ -1,5 +1,8 @@
 -- This is the Alpha Male's Territory, do you have permission to be here?
 
+--Potentials: Highest and lowest temp for a city. Todays reviews for a loc
+
+
 
 --!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!THIS IS AN UPDATED SP TO REPLACE THE "addAttrToTable" PROCEDURE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 --Calls Weather data for the current date given a city
