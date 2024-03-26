@@ -81,7 +81,7 @@ END;
 GO
 
 --Example of an Execution of the previous procedure:
-EXEC avgRatePerSeason @City = "Chicago", @Season = "Winter";
+EXEC avgRatePerSeasonInCity @City = "Chicago", @Season = "Winter";
 
 
 
