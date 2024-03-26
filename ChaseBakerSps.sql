@@ -17,6 +17,11 @@ CREATE PROCEDURE getLocDetails
 
 	GO
 
+--ex of it running
+--( i had to add extra data with the current date for it to work, there must be a current instance of data)
+--ideally our data is refreshing upon user request, if not, i will remove the date paramaeter. 
+		EXEC getLocDetails @City = "Chicago"; 
+
 --You input table, attribute name, and attribute type, then it gets added to that table. 
 --This one is primarily used to add features to the LocationWeather table to add more valuable criteria of information to return.
 --The plan is to implement a datascraping feature also within this procedure. 
