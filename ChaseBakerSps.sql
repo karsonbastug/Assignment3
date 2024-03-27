@@ -63,7 +63,7 @@ SELECT (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
 		WHEN MONTH(date) IN (6, 7, 8) THEN 'summer'
 		WHEN MONTH(date) IN (9, 10, 11) THEN 'fall'
 	END) as season,
-	AVG(Rating) AS "Average Rating"
+	AVG(Rating) AS AverageRating
 FROM HealthReview 
 INNER JOIN Location ON HealthReview.LID = Location.LID
 WHERE City = @City
