@@ -1,5 +1,5 @@
 
-CREATE PROCEDURE GetRatingsForHighTemp
+CREATE PROCEDURE AGetTemp
     @MaxTemp INT
 AS
 BEGIN
