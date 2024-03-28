@@ -9,8 +9,8 @@ BEGIN
     INNER JOIN Location L on LW.LID=L.LID
     WHERE LW.MaxTemp > @MaxTemp;
 END;
-
---EXEC GetRatingsForHighTemp @MaxTemp = 80;
+--drop procedure GetRatingsForHighTemp
+--EXEC AGetTemp @MaxTemp = 80;
 
 
 CREATE PROCEDURE GetCitiesByRatingAndDateRated
