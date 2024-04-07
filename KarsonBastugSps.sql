@@ -4,7 +4,7 @@ CREATE PROCEDURE GetRatingsForHighTemp
     @MaxTemp INT
 AS
 BEGIN
-    SELECT HR.Rating, HR.[Date], HR.Comment, LW.MaxTemp
+    SELECT HR.Rating, HR.[Date], HR.Comment, LW.MaxTemp, L.City
     FROM HealthReview HR
     INNER JOIN LocationWeather LW ON HR.LID = LW.LID AND HR.WID = LW.WID
     INNER JOIN Location L on LW.LID=L.LID
