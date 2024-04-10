@@ -1,90 +1,62 @@
-use Asthma;
-INSERT INTO [User] ([UID], Username, [Password], Email) VALUES
-(1, 'alice_smith', 'pass123', 'alice.smith@example.com'),
-(2, 'bob_jones', 'bobpass', 'bob.jones@example.com'),
-(3, 'emma_jackson', 'emma123', 'emma.jackson@example.com'),
-(4, 'michael_adams', 'mikepass', 'michael.adams@example.com'),
-(5, 'sophia_wilson', 'sophia456', 'sophia.wilson@example.com'),
-(6, 'john_doe', 'john123', 'john.doe@example.com'),
-(7, 'jane_smith', 'jane456', 'jane.smith@example.com'),
-(8, 'alex_wilson', 'alexpass', 'alex.wilson@example.com'),
-(9, 'sara_jones', 'sara789', 'sara.jones@example.com'),
-(10, 'kevin_anderson', 'kevinpass', 'kevin.anderson@example.com'),
-(11, 'olivia_brown', 'olivia123', 'olivia.brown@example.com'),
-(12, 'william_taylor', 'williampass', 'william.taylor@example.com'),
-(13, 'emily_miller', 'emilypass', 'emily.miller@example.com'),
-(14, 'daniel_johnson', 'danielpass', 'daniel.johnson@example.com'),
-(15, 'ava_garcia', 'avapass', 'ava.garcia@example.com'),
-(16, 'james_rodriguez', 'jamespass', 'james.rodriguez@example.com'),
-(17, 'mia_martinez', 'miapass', 'mia.martinez@example.com'),
-(18, 'ethan_hernandez', 'ethanpass', 'ethan.hernandez@example.com'),
-(19, 'isabella_lopez', 'isabellapass', 'isabella.lopez@example.com'),
-(20, 'aiden_gonzalez', 'aidenpass', 'aiden.gonzalez@example.com'),
-(21, 'oliver_perez', 'oliverpass', 'oliver.perez@example.com'),
-(22, 'amelia_sanchez', 'ameliapass', 'amelia.sanchez@example.com'),
-(23, 'benjamin_rivera', 'benjaminpass', 'benjamin.rivera@example.com'),
-(24, 'chloe_lee', 'chloepass', 'chloe.lee@example.com'),
-(25, 'lucas_wood', 'lucaspass', 'lucas.wood@example.com'),
-(26, 'madison_morris', 'madisonpass', 'madison.morris@example.com'),
-(27, 'mason_nguyen', 'masonpass', 'mason.nguyen@example.com'),
-(28, 'harper_kim', 'harperpass', 'harper.kim@example.com'),
-(29, 'evelyn_tran', 'evelynpass', 'evelyn.tran@example.com'),
-(30, 'jackson_ng', 'jacksonpass', 'jackson.ng@example.com');
+--Use Asthma;
+INSERT INTO Location (LID, City, State, Address, ZipCode)
+VALUES 
+    (1, 'Chicago', 'IL', '123 Main St', '60601'),
+    (2, 'New York City', 'NY', '456 Elm St', '10001'),
+    (3, 'Philadelphia', 'PA', '789 Oak St', '19103'),
+    (4, 'Los Angeles', 'CA', '101 Pine St', '90001'),
+    (5, 'Miami', 'FL', '202 Maple St', '33101');
 
-INSERT INTO Location (LID, City, [State], ZipCode, [Address]) VALUES
-(1, 'Chicago', 'IL', '60601', '123 Main St'),
-(2, 'Houston', 'TX', '77002', '456 Elm St'),
-(3, 'Miami', 'FL', '33101', '789 Ocean Ave'),
-(4, 'Seattle', 'WA', '98101', '101 Pine St'),
-(5, 'Denver', 'CO', '80202', '555 Broadway St');
+-- LocationWeather table entries
+INSERT INTO LocationWeather (LID, MaxTemp, MinTemp, AvgTemp, Precipitation, [Date])
+VALUES 
+    (1, 50, 40, 45, 0, '2024-03-25'),
+    (2, 60, 50, 55, 0, '2024-03-25'),
+    (3, 55, 45, 50, 0, '2024-03-25'),
+    (4, 70, 60, 65, 0, '2024-03-25'),
+    (5, 80, 70, 75, 0, '2024-03-25');
 
+-- User table entries
+INSERT INTO [User] (UID, Username, [Password], Email)
+VALUES 
+    (1, 'JohnDoe', 'password123', 'johndoe@example.com'),
+    (2, 'JaneSmith', 'qwerty456', 'janesmith@example.com'),
+    (3, 'MikeJohnson', 'ilovecats', 'mikejohnson@example.com'),
+    (4, 'EmilyBrown', 'letmein', 'emilybrown@example.com'),
+    (5, 'DavidLee', 'password', 'davidlee@example.com');
 
-INSERT INTO LocationWeather (LID, MaxTemp, MinTemp, AvgTemp, Precipitation, Date) VALUES
-(1, 75, 55, 65, 0, '2024-01-10'),
-(2, 80, 60, 70, 0, '2024-02-04'),
-(3, 85, 65, 75, 10, '2023-08-19'),
-(4, 70, 50, 60, 5, '2023-09-20'),
-(5, 60, 40, 50, 8, '2023-10-19'),
-(2, 75, 55, 65, 15, '2023-11-19'),
-(2, 80, 60, 70, 5, '2023-12-20'),
-(3, 45, 25, 35, 20, '2024-01-19'),
-(4, 65, 45, 55, 10, '2024-02-18'),
-(5, 85, 65, 75, 5, '2024-03-21'),
-(1, 70, 50, 60, 10, '2023-04-19'),
-(2, 60, 40, 50, 8, '2023-05-20'),
-(3, 55, 35, 45, 12, '2023-06-19'),
-(4, 80, 60, 70, 6, '2023-07-18'),
-(5, 75, 55, 65, 10, '2023-08-21'),
-(1, 90, 70, 80, 5, '2023-09-20'),
-(2, 65, 45, 55, 15, '2023-10-19'),
-(3, 50, 30, 40, 18, '2023-11-20'),
-(4, 75, 55, 65, 8, '2023-12-19'),
-(5, 70, 50, 60, 12, '2023-01-18'),
-(1, 85, 65, 75, 7, '2023-02-21'),
-(2, 60, 40, 50, 20, '2023-03-20'),
-(3, 55, 35, 45, 15, '2023-04-19');
-
-INSERT INTO HealthReview (RID, [UID], LID, Rating, Comment, [Date]) VALUES
-(1, 6, 1, 4, 'Enjoyed the city vibe!', '2024-04-06'),
-(2, 7, 2, 8, 'Perfect weather for outdoor activities.', '2023-12-20'),
-(3, 3, 3, 2, 'Too cold for my liking.', '2024-01-19'),
-(4, 9, 4, 7, 'Nice and mild, great for exploring.', '2024-02-18'),
-(5, 10, 5, 9, 'Absolutely beautiful weather!', '2024-04-04'),
-(6, 11, 1, 6, 'A bit chilly but manageable.', '2023-11-11'),
-(7, 12, 2, 7, 'Lovely weather, perfect for a stroll.', '2024-04-04'),
-(8, 13, 3, 5, 'Slightly cool, but enjoyable overall.', '2024-04-03'),
-(9, 14, 4, 8, 'Great weather for outdoor activities.', '2024-04-02'),
-(10, 15, 5, 6, 'Pleasant temperature, slight breeze.', '2024-04-04'),
-(11, 16, 1, 9, 'Warm and sunny, perfect beach day!', '2024-04-04'),
-(12, 17, 2, 5, 'Bit rainy, but still had fun.', '2024-04-11'),
-(13, 18, 3, 3, 'Cold and rainy, not ideal.', '2024-04-04'),
-(14, 19, 4, 7, 'Nice weather, good for sightseeing.', '2024-04-04'),
-(15, 20, 5, 8, 'Enjoyed the pleasant weather.', '2024-04-04'),
-(16, 21, 1, 9, 'Perfect temperature, sunny skies.', '2024-04-04'),
-(17, 22, 2, 4, 'Too much rain, couldnt do much outdoors.', '2024-04-04'),
-(18, 23, 3, 5, 'Cool weather, could use a jacket.', '2024-04-04'),
-(19, 24, 1, 7, 'Warm weather, great for outdoor activities.', '2024-04-04'),
-(20, 25, 2, 8, 'Sunny and warm, perfect day for a picnic.', '2024-04-04');
-
+-- HealthReview table entries
+INSERT INTO HealthReview (RID, Rating, Comment, LID, UID, [Date])
+VALUES 
+    (1, 9, 'Minimal asthma symptoms today.', 1, 1, '2024-04-01'),
+    (2, 10, 'No asthma symptoms experienced.', 2, 2, '2024-04-01'),
+    (3, 6, 'Asthma symptoms were moderate today.', 3, 3, '2024-04-08'),
+    (4, 1, 'Experienced severe asthma symptoms.', 4, 4, '2024-04-07'),
+    (5, 7, 'Asthma symptoms were manageable.', 5, 5, '2024-03-25'),
+    (6, 6, 'Asthma symptoms were mild today.', 1, 2, '2024-04-06'),
+    (7, 5, 'Could feel slight asthma discomfort.', 1, 3, '2024-04-06'),
+    (8, 9, 'No asthma issues today.', 2, 4, '2024-04-06'),
+    (9, 1, 'Asthma symptoms were unbearable.', 2, 5, '2024-04-06'),
+    (10, 4, 'Asthma symptoms slightly aggravated.', 3, 1, '2024-04-05'),
+    (11, 6, 'Asthma symptoms were tolerable.', 3, 2, '2024-04-07'),
+    (12, 10, 'Breathed easily with no asthma problems.', 4, 3, '2024-03-26'),
+    (13, 2, 'Asthma symptoms worsened unexpectedly.', 4, 4, '2024-03-26'),
+    (14, 9, 'Enjoyed the beach without asthma interference.', 5, 5, '2024-03-26'),
+    (15, 3, 'Found it difficult to breathe due to asthma.', 5, 1, '2024-03-26'),
+    (16, 8, 'Asthma symptoms were bothersome but manageable.', 1, 4, '2024-03-27'),
+    (17, 5, 'Asthma symptoms were moderate today.', 2, 1, '2024-03-28'),
+    (18, 1, 'Experienced severe asthma symptoms.', 3, 5, '2024-03-29'),
+    (19, 6, 'Asthma symptoms were mild today.', 4, 2, '2024-03-30'),
+    (20, 9, 'No asthma issues today.', 5, 3, '2024-03-31'),
+    (21, 4, 'Asthma symptoms slightly aggravated.', 1, 5, '2024-04-01'),
+    (22, 7, 'Asthma symptoms were tolerable.', 2, 3, '2024-04-02'),
+    (23, 10, 'Breathed easily with no asthma problems.', 3, 4, '2024-04-03'),
+    (24, 3, 'Asthma symptoms worsened unexpectedly.', 4, 1, '2024-04-04'),
+    (25, 8, 'Enjoyed the beach without asthma interference.', 5, 2, '2024-04-05'),
+    (26, 5, 'Found it difficult to breathe due to asthma.', 1, 3, '2024-04-06'),
+    (27, 9, 'Minimal asthma symptoms today.', 2, 4, '2024-04-07'),
+    (28, 7, 'No asthma symptoms experienced.', 3, 5, '2024-04-08'),
+    (29, 2, 'Asthma symptoms were moderate today.', 4, 1, '2024-04-09'),
+    (30, 6, 'Experienced severe asthma symptoms.', 5, 2, '2024-04-09');
 
 
