@@ -1,4 +1,3 @@
-
 INSERT INTO [User] ([UID], Username, [Password], Email) VALUES
 (1, 'alice_smith', 'pass123', 'alice.smith@example.com'),
 (2, 'bob_jones', 'bobpass', 'bob.jones@example.com'),
@@ -81,7 +80,7 @@ INSERT INTO LocationWeather (LID, WID, MaxTemp, MinTemp, AvgTemp, Precipitation,
 (20, 119, 70, 50, 60, 12, '2023-01-18'),
 (21, 120, 85, 65, 75, 7, '2023-02-21'),
 (22, 121, 60, 40, 50, 20, '2023-03-20'),
-(23, 122, 55, 35, 45, 15, '2023-04-19'),
+(23, 122, 55, 35, 45, 15, '2023-04-19');
 
 INSERT INTO HealthReview ([UID], LID, WID, Rating, Comment, [Date]) VALUES
 (6, 6, 105, 4, 'Enjoyed the city vibe!', '2023-11-19'),
@@ -104,23 +103,3 @@ INSERT INTO HealthReview ([UID], LID, WID, Rating, Comment, [Date]) VALUES
 (23, 23, 122, 5, 'Cool weather, could use a jacket.', '2024-04-04'),
 (24, 6, 105, 7, 'Warm weather, great for outdoor activities.', '2024-04-04'),
 (25, 7, 106, 8, 'Sunny and warm, perfect day for a picnic.', '2024-04-04');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
