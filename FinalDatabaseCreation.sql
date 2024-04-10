@@ -1,5 +1,7 @@
---CREATE DATABASE Asthma;
---GO
+
+
+CREATE DATABASE Asthma;
+GO
 
 USE Asthma;
 GO
@@ -42,12 +44,19 @@ CREATE TABLE LocationWeather (
 
 
 	CREATE TABLE HealthReview (
-    RID INT PRIMARY KEY,
+    RID INT,
     Rating INT,
     Comment TEXT,
     LID INT,
     UID INT,
     [Date] DATE,
+	PRIMARY KEY (RID, LID, UID, [Date]),
     FOREIGN KEY (LID) REFERENCES Location(LID),
     FOREIGN KEY (UID) REFERENCES [User](UID)
 );
+
+
+	
+
+
+	
