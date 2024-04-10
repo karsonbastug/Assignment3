@@ -99,7 +99,7 @@ INSERT INTO HealthReview ([UID], LID, WID, Rating, Comment, [Date]) VALUES
 (19, 19, 118, 7, 'Nice weather, good for sightseeing.', '2024-04-04'),
 (20, 20, 119, 8, 'Enjoyed the pleasant weather.', '2024-04-04'),
 (21, 21, 120, 9, 'Perfect temperature, sunny skies.', '2024-04-04'),
-(22, 22, 121, 4, 'Too much rain, couldn't do much outdoors.', '2024-04-04'),
+(22, 22, 121, 4, 'Too much rain, couldnt do much outdoors.', '2024-04-04'),
 (23, 23, 122, 5, 'Cool weather, could use a jacket.', '2024-04-04'),
 (24, 6, 105, 7, 'Warm weather, great for outdoor activities.', '2024-04-04'),
 (25, 7, 106, 8, 'Sunny and warm, perfect day for a picnic.', '2024-04-04');
