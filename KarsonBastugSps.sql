@@ -13,32 +13,41 @@ END;
 
 --EXEC GetRatingsForHighTemp @MaxTemp = 80;
 
+
+
+--drop procedure GetCity1
 CREATE PROCEDURE GetCity1
     @Location varchar(20)
 AS
 BEGIN
+    DECLARE @CurrentDate DATE
+    SET @CurrentDate = GETDATE() 
+    
     SELECT HR.[Date], HR.Rating, LW.MaxTemp, LW.MinTemp, LW.AvgTemp, L.City, HR.Comment
     FROM Location L
     INNER JOIN LocationWeather LW ON L.LID = LW.LID
-    INNER JOIN HealthReview HR ON LW.LID = HR.LID AND LW.WID = HR.WID
+    INNER JOIN HealthReview HR ON LW.LID = HR.LID AND LW.LID = HR.LID
     WHERE L.City = @Location
+        AND HR.[Date] <= @CurrentDate 
 END;
 
-
---drop procedure GetCity1
 
 
 --Unused 
 
-CREATE PROCEDURE GetCitiesByRatingAndDateRated
-    @Rating INT
+CREATE PROCEDURE GetCity2
+    @Location varchar(20)
 AS
 BEGIN
-    SELECT L.City, HR.[Date], HR.Rating
+    DECLARE @PastWeekDate DATE
+    SET @PastWeekDate = DATEADD(DAY, -7, GETDATE())
+    
+    SELECT HR.[Date], HR.Rating, LW.MaxTemp, LW.MinTemp, LW.AvgTemp, L.City, HR.Comment
     FROM Location L
     INNER JOIN LocationWeather LW ON L.LID = LW.LID
-    INNER JOIN HealthReview HR ON LW.LID = HR.LID AND LW.WID = HR.WID
-    WHERE HR.Rating > @Rating
+    INNER JOIN HealthReview HR ON LW.LID = HR.LID AND LW.LID = HR.LID
+    WHERE L.City = @Location
+        AND HR.[Date] < @PastWeekDate 
 END;
 
---EXEC GetCitiesByRatingAndDateRated @Rating = 3
+
