@@ -1,20 +1,20 @@
 
 
-CREATE DATABASE Asthma;
-GO
+--CREATE DATABASE Asthma;
+--GO
 
 USE Asthma;
 GO
-/*drop first*/
+--drop first
 	drop table HealthReview;
-/*drop second*/
+--drop second
 	drop table LocationWeather;
-/*drop third*/
+--drop third
 	drop table Location;
-/*drop fourth*/
+--drop fourth
 	drop table [User];
 
-/* re-create tables */
+--re-create tables as given:
 
 CREATE TABLE [User] (
     [UID] INT PRIMARY KEY NOT NULL,
