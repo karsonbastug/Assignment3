@@ -16,13 +16,6 @@ GO
 
 --re-create tables as given:
 
-CREATE TABLE [User] (
-    [UID] INT PRIMARY KEY NOT NULL,
-    Username VARCHAR(50) NOT NULL,
-    [Password] VARCHAR(50) NOT NULL,
-    Email VARCHAR(50) NOT NULL
-);
-
 CREATE TABLE Location (
     LID INT PRIMARY KEY NOT NULL,
     City VARCHAR(100),
@@ -48,9 +41,8 @@ CREATE TABLE LocationWeather (
     Rating INT,
     Comment TEXT,
     LID INT,
-    UID INT,
     [Date] DATE,
-	PRIMARY KEY (RID, LID, UID, [Date]),
+	PRIMARY KEY (RID, LID, [Date]),
     FOREIGN KEY (LID) REFERENCES Location(LID),
     FOREIGN KEY (UID) REFERENCES [User](UID)
 );
