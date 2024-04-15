@@ -14,6 +14,24 @@ END;
   --EXEC GetRatingsForHighTemp @MaxTemp = 85 @MinTemp=65;
 
 
+CREATE PROCEDURE InsertReview
+    @Rating INT,
+    @Comment VARCHAR(20),
+    @City VARCHAR(50)
+AS
+BEGIN
+    DECLARE @NewRID INT;
+    SELECT @NewRID = ISNULL(MAX(RID), 0) + 1 FROM HealthReview;
+    INSERT INTO HealthReview (RID, Rating, Comment, LID, [Date])
+    SELECT @NewRID, @Rating, @Comment, Location.LID, GETDATE()
+    FROM Location
+    INNER JOIN LocationWeather ON Location.LID = LocationWeather.LID
+    WHERE Location.City = @City;
+END;
+
+
+
+
 
 CREATE PROCEDURE GetRatingForLocations
     @LID INT
