@@ -6,7 +6,7 @@ AS
 BEGIN
     SELECT HR.Rating, HR.[Date], HR.Comment, LW.MaxTemp
     FROM HealthReview HR
-    INNER JOIN LocationWeather LW ON HR.LID = LW.LID AND HR.WID = LW.WID
+    INNER JOIN LocationWeather LW ON HR.LID = LW.LID
     INNER JOIN Location L on LW.LID=L.LID
     WHERE LW.MaxTemp > @MaxTemp;
 END;
