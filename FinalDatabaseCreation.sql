@@ -43,8 +43,7 @@ CREATE TABLE LocationWeather (
     LID INT,
     [Date] DATE,
 	PRIMARY KEY (RID, LID, [Date]),
-    FOREIGN KEY (LID) REFERENCES Location(LID),
-    FOREIGN KEY (UID) REFERENCES [User](UID)
+    FOREIGN KEY (LID) REFERENCES Location(LID)
 );
 
 
