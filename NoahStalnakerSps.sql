@@ -27,8 +27,12 @@ BEGIN
     FROM Location
     INNER JOIN LocationWeather ON Location.LID = LocationWeather.LID
     WHERE Location.City = @City;
+	SELECT HealthReview.Rating, HealthReview.Comment, Location.City
+	FROM HealthReview
+	INNER JOIN Location ON HealthReview.LID = Location.LID
+	WHERE RID=@NewRID;
+	
 END;
-
 
 
 
