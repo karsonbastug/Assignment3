@@ -6,6 +6,8 @@
 
 --!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!THIS IS AN UPDATED SP TO REPLACE THE "addAttrToTable" PROCEDURE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 --Calls Weather data for the current date given a city
+
+--drop procedure spgetLocDetails
 CREATE PROCEDURE spgetLocDetails
 	@City varchar(30)
 
@@ -30,6 +32,8 @@ CREATE PROCEDURE spgetLocDetails
 --The plan is to implement a datascraping feature also within this procedure. 
 --Ideally, as soon as the category is created, it scrapes data from that category for the new attribute immediately.
 --We have not learned/written that code yet so this is only the first half. (Also assuming the created attribute is real and valid).
+
+--drop procedure addAttrToTable
 CREATE PROCEDURE addAttrToTable
 	@Table varchar(30),
 	@NewAttr varchar(30),
@@ -47,7 +51,7 @@ CREATE PROCEDURE addAttrToTable
 		GO
 
 --To execute the above procedure:
-EXEC addAttrToTable @Table = "LocationWeather", @NewAttr = "Windiness", @NewAttrDataType = "varchar(30)";
+--EXEC addAttrToTable @Table = "LocationWeather", @NewAttr = "Windiness", @NewAttrDataType = "varchar(30)";
 
 
 --You input city and season, outputs avg rating during that season in that city. 
@@ -80,12 +84,10 @@ HAVING (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
 END;
 GO
 
---Example of an Execution of the previous procedure:
-EXEC avgRatePerSeasonInCity @City = "Chicago", @Season = "Winter";
-
 
 
 --Modified Version of previous that just gives average of Rating in every season for every city	
+	--drop procedure avgRatingPerSeason
 CREATE PROC avgRatingPerSeason
 
 
@@ -110,7 +112,7 @@ GROUP BY (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
 		GO
 
 --How to execute the above procedure:
-EXEC PROC avgRatingPerSeason
+--EXEC PROC avgRatingPerSeason
 
 
 
