@@ -1,3 +1,4 @@
+--drop procedure GetAverageRatingForTemperatureRange
 CREATE PROCEDURE GetAverageRatingForTemperatureRange
     @MinTemp INT,
     @MaxTemp INT
@@ -13,7 +14,7 @@ END;
 
   --EXEC GetRatingsForHighTemp @MaxTemp = 85 @MinTemp=65;
 
-
+--drop procedure InsertReview
 CREATE PROCEDURE InsertReview
     @Rating INT,
     @Comment VARCHAR(20),
@@ -36,7 +37,7 @@ END;
 
 
 
-
+--drop procedure GetRatingsForLocations
 CREATE PROCEDURE GetRatingForLocations
     @LID INT
 AS
