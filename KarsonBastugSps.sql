@@ -11,7 +11,6 @@ BEGIN
     WHERE LW.MaxTemp > @MaxTemp;
 END;
 
---EXEC GetRatingsForHighTemp @MaxTemp = 80;
 
 
 
