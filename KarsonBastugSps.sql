@@ -33,7 +33,7 @@ END;
 
 
 
---Unused 
+--New Procedure
 
 CREATE PROCEDURE GetCity2
     @Location varchar(20)
