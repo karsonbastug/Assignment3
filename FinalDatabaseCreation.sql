@@ -39,7 +39,7 @@ CREATE TABLE LocationWeather (
 	CREATE TABLE HealthReview (
     RID INT,
     Rating INT,
-    Comment TEXT,
+    UserComment TEXT,
     LID INT,
     [Date] DATE,
 	PRIMARY KEY (RID, LID, [Date]),
