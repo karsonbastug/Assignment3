@@ -18,7 +18,7 @@ VALUES
 
 
 -- HealthReview table entries
-INSERT INTO HealthReview (RID, Rating, Comment, LID, [Date])
+INSERT INTO HealthReview (RID, Rating, UserComment, LID, [Date])
 VALUES 
     (1, 9, 'Minimal asthma symptoms today.', 1, '2024-04-01'),
     (2, 10, 'No asthma symptoms experienced.', 2, '2024-04-01'),
