@@ -16,18 +16,18 @@ END;
 --New Procedure
 CREATE PROCEDURE InsertReview
     @Rating INT,
-    @Comment VARCHAR(20),
+    @UserComment VARCHAR(20),
     @City VARCHAR(50)
 AS
 BEGIN
     DECLARE @NewRID INT;
     SELECT @NewRID = ISNULL(MAX(RID), 0) + 1 FROM HealthReview;
-    INSERT INTO HealthReview (RID, Rating, Comment, LID, [Date])
-    SELECT @NewRID, @Rating, @Comment, Location.LID, GETDATE()
+    INSERT INTO HealthReview (RID, Rating, UserComment, LID, [Date])
+    SELECT @NewRID, @Rating, @UserComment, Location.LID, GETDATE()
     FROM Location
     INNER JOIN LocationWeather ON Location.LID = LocationWeather.LID
     WHERE Location.City = @City;
-	SELECT HealthReview.Rating, HealthReview.Comment, Location.City
+	SELECT HealthReview.Rating, HealthReview.UserComment, Location.City
 	FROM HealthReview
 	INNER JOIN Location ON HealthReview.LID = Location.LID
 	WHERE RID=@NewRID;
