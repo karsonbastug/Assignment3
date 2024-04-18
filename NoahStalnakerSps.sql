@@ -6,11 +6,13 @@ AS
 BEGIN
     SELECT AVG(CAST(HR.Rating AS FLOAT)) AS Rating, HR.[Date], L.[Address], L.[State]
     FROM HealthReview HR
-    JOIN LocationWeather LW ON HR.LID = LW.LID AND HR.WID = LW.WID
+    JOIN LocationWeather LW ON HR.LID = LW.LID 
     JOIN Location L ON LW.LID = L.LID
     WHERE LW.MinTemp >= @MinTemp AND LW.MaxTemp <= @MaxTemp
-    GROUP BY HR.Rating, HR.[Date], L.[Address], L.[State];
+    GROUP BY HR.Rating, HR.[Date], L.[Address], L.[State]
+	ORDER BY HR.Rating DESC;
 END;
+
 
 
 --New Procedure
