@@ -22,7 +22,7 @@ BEGIN
     DECLARE @CurrentDate DATE
     SET @CurrentDate = GETDATE() 
     
-    SELECT HR.[Date], HR.Rating, LW.MaxTemp, LW.MinTemp, LW.AvgTemp, L.City, HR.Comment
+    SELECT HR.[Date], HR.Rating, LW.MaxTemp, LW.MinTemp, LW.AvgTemp, L.City, HR.UserComment
     FROM Location L
     INNER JOIN LocationWeather LW ON L.LID = LW.LID
     INNER JOIN HealthReview HR ON LW.LID = HR.LID AND LW.LID = HR.LID
