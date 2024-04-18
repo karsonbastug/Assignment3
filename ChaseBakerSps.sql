@@ -2,6 +2,46 @@
 
 --Potentials: Highest and lowest temp for a city. Todays reviews for a loc
 
+--!!!!!!!!!!!!!!!!!!!!!!!!! avgRatePerSeasonInCity is the only sp used in the final webpage out of these procedures !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+--You input city and season, outputs avg rating during that season in that city. 
+CREATE PROC avgRatePerSeasonInCity
+@City varchar(100),
+@Season varchar(100)
+
+AS 
+BEGIN
+
+SELECT (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
+		WHEN MONTH(date) IN (3, 4, 5) THEN 'spring'
+		WHEN MONTH(date) IN (6, 7, 8) THEN 'summer'
+		WHEN MONTH(date) IN (9, 10, 11) THEN 'fall'
+	END) as season,
+	AVG(Rating) AS AverageRating
+FROM HealthReview 
+INNER JOIN Location ON HealthReview.LID = Location.LID
+WHERE City = @City
+GROUP BY (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
+	       WHEN MONTH(date) IN (3, 4, 5) THEN 'spring'
+	       WHEN MONTH(date) IN (6, 7, 8) THEN 'summer'
+	       WHEN MONTH(date) IN (9, 10, 11) THEN 'fall'
+	   END) 
+HAVING (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
+	     WHEN MONTH(date) IN (3, 4, 5) THEN 'spring'
+	     WHEN MONTH(date) IN (6, 7, 8) THEN 'summer'
+	     WHEN MONTH(date) IN (9, 10, 11) THEN 'fall'
+	END) = LOWER(@Season);
+END;
+GO
+
+	--exec avgRatePerSeasonInCity Chicago, Spring;          <- This will give a result
+	--exec avgRatePerSeasonInCity Chicago, Winter;          <- This will give a blank because nothing matches this criteria
+
+
+
+
+
+
 
 
 --!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!THIS IS AN UPDATED SP TO REPLACE THE "addAttrToTable" PROCEDURE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -54,35 +94,7 @@ CREATE PROCEDURE addAttrToTable
 --EXEC addAttrToTable @Table = "LocationWeather", @NewAttr = "Windiness", @NewAttrDataType = "varchar(30)";
 
 
---You input city and season, outputs avg rating during that season in that city. 
-CREATE PROC avgRatePerSeasonInCity
-@City varchar(100),
-@Season varchar(100)
 
-AS 
-BEGIN
-
-SELECT (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
-		WHEN MONTH(date) IN (3, 4, 5) THEN 'spring'
-		WHEN MONTH(date) IN (6, 7, 8) THEN 'summer'
-		WHEN MONTH(date) IN (9, 10, 11) THEN 'fall'
-	END) as season,
-	AVG(Rating) AS AverageRating
-FROM HealthReview 
-INNER JOIN Location ON HealthReview.LID = Location.LID
-WHERE City = @City
-GROUP BY (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
-	       WHEN MONTH(date) IN (3, 4, 5) THEN 'spring'
-	       WHEN MONTH(date) IN (6, 7, 8) THEN 'summer'
-	       WHEN MONTH(date) IN (9, 10, 11) THEN 'fall'
-	   END) 
-HAVING (CASE WHEN MONTH(date) IN (12, 1, 2) THEN 'winter'
-	     WHEN MONTH(date) IN (3, 4, 5) THEN 'spring'
-	     WHEN MONTH(date) IN (6, 7, 8) THEN 'summer'
-	     WHEN MONTH(date) IN (9, 10, 11) THEN 'fall'
-	END) = LOWER(@Season);
-END;
-GO
 
 
 
